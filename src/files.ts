@@ -9,6 +9,14 @@ import fs from 'fs';
  */
 class Files {
 
+    /**
+     * search files using recursive or not and return result
+     * 
+     * @param path path to search files
+     * @param nameFilter filter
+     * @param useRecursive useRecursive
+     * @returns result
+     */
     public static searchFilesSync(path: string, nameFilter?: (name: string) => boolean, useRecursive=false): string[] {
         if(useRecursive) return this.deepSearchFilesSync(path, nameFilter);
         if(nameFilter) return fs.readdirSync(path).filter(nameFilter);
@@ -16,7 +24,10 @@ class Files {
     }
 
     /**
-     * Deep find files from path (sync)
+     * search files using recursive
+     * @param path path to deep search
+     * @param nameFilter filter
+     * @returns result
      */
     public static deepSearchFilesSync(path: string, nameFilter?: (name: string) => boolean): string[] {
         var arr = new Array<string>();
@@ -36,10 +47,11 @@ class Files {
     }
 
     /**
+     * search directories using recursive
      * 
      * @param path path to deep search
-     * @param nameFilter 
-     * @returns 
+     * @param nameFilter filter
+     * @returns result
      */
     public static deepSearchDirSync(path: string, nameFilter?: (name: string) => boolean): string[] {
         var arr = new Array<string>();

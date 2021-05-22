@@ -33,7 +33,7 @@ class Files {
         var arr = new Array<string>();
         var dirs = fs.readdirSync(path);
         for(let i of dirs) {
-            i = `${path}/${i}`;
+            i = `${path}\\${i}`;
             let stat = fs.lstatSync(i);
             if(stat.isDirectory()) {
                 arr = arr.concat(this.deepSearchFilesSync(i, nameFilter));

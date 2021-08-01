@@ -1,9 +1,11 @@
 **Autobot v3**
-this autobot version has completely rewrited.
 
-module system changed to custom module system
+This autobot version has completely rewrited.
+
+Module system changed to custom module system
 
 **Deprecated**
+
 This autobot v3 has deprecated because readability and hard usage
 
 I am now developing https://github.com/devlaq/Sourcebot
